@@ -6,6 +6,6 @@ steps:
            '.']
            
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', '-t', 
+    args: ['push', 
            'gcr.io/portfolio/portfolio:$SHORT_SHA', 
            '.']
