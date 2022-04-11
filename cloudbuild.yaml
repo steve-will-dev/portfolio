@@ -5,4 +5,4 @@ steps:
            'gcr.io/portfolio/portfolio:$SHORT_SHA', 
            '.']    
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/portfolio/portfolio:$SHORT_SHA']
+    args: ['push', 'europe-west2-docker.pkg.dev/gcr.io/portfolio/portfolio:$SHORT_SHA']
