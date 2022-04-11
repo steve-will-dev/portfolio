@@ -6,3 +6,5 @@ steps:
            '.']    
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'eu.gcr.io/portfolio-346523/portfolio/portfolio:$SHORT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['beta', 'run', 'deploy', 'portfoloio', '--region=europe-west2 --platform=managed --image=eu.gcr.io/portfolio-346523/portfolio/portfolio:$SHORT_SHA']
