@@ -2,7 +2,7 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
-           'gcr.io/portfolio/portfolio:$SHORT_SHA', 
+           'eu.gcr.io/portfolio-346523/portfolio/portfolio:$SHORT_SHA', 
            '.']    
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'eu.gcr.io/portfolio-346523/portfolio/portfolio:$SHORT_SHA']
