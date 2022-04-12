@@ -1,0 +1,10 @@
+steps:
+  # Docker Build
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 
+           'eu.gcr.io/portfolio-346523/client/portfolio:$SHORT_SHA', 
+           '.']    
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'eu.gcr.io/portfolio-346523/client/portfolio:$SHORT_SHA']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta', 'run', 'deploy', 'portfolio', '--region=europe-west2', '--platform=managed', '--image=eu.gcr.io/portfolio-346523/client/portfolio:$SHORT_SHA']
